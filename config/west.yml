@@ -3,12 +3,19 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: gpeye
+      url-base: https://github.com/GPeye
 
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3.0
       import: app/west.yml
+
+    # nice-view-mod: logo + layer + BT + battery, no WPM dependency
+    - name: nice-view-mod
+      remote: gpeye
+      revision: main
 
   self:
     path: config
