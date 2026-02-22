@@ -155,41 +155,6 @@ static void build_left_screen(lv_obj_t *parent) {
     lv_obj_add_flag(mod_lbl, LV_OBJ_FLAG_HIDDEN);
 }
 
-/* RIGHT half layout
-   ┌──────────────┐
-   │     WPM      │
-   │     087      │
-   │ ████████░░░  │
-   └──────────────┘ */
-static void build_right_screen(lv_obj_t *parent) {
-    lv_obj_set_style_bg_color(parent, lv_color_black(), 0);
-
-    /* "WPM" header */
-    wpm_lbl = lv_label_create(parent);
-    lv_obj_set_style_text_color(wpm_lbl, lv_color_white(), 0);
-    lv_label_set_text(wpm_lbl, "WPM");
-    lv_obj_align(wpm_lbl, LV_ALIGN_TOP_MID, 0, 2);
-
-    /* Large WPM number */
-    wpm_val = lv_label_create(parent);
-    static lv_style_t style_big;
-    lv_style_init(&style_big);
-    lv_style_set_text_font(&style_big, &lv_font_montserrat_20);
-    lv_obj_add_style(wpm_val, &style_big, 0);
-    lv_obj_set_style_text_color(wpm_val, lv_color_white(), 0);
-    lv_label_set_text(wpm_val, "  0");
-    lv_obj_align(wpm_val, LV_ALIGN_CENTER, 0, -4);
-
-    /* Progress bar */
-    wpm_bar = lv_bar_create(parent);
-    lv_obj_set_size(wpm_bar, 110, 8);
-    lv_bar_set_range(wpm_bar, 0, 200);
-    lv_bar_set_value(wpm_bar, 0, LV_ANIM_OFF);
-    lv_obj_set_style_bg_color(wpm_bar, lv_color_make(0x33, 0x33, 0x33), LV_PART_MAIN);
-    lv_obj_set_style_bg_color(wpm_bar, lv_color_make(0x00, 0xFF, 0x00), LV_PART_INDICATOR);
-    lv_obj_align(wpm_bar, LV_ALIGN_BOTTOM_MID, 0, -4);
-}
-
 /* ── ZMK display entry point ────────────────────────────────────────── */
 int zmk_display_status_screen(lv_obj_t *parent) {
     if (is_left_side()) {

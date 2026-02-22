@@ -2,20 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: mctechnology17
-      url-base: https://github.com/mctechnology17
-
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3.0
+      revision: v0.3
       import: app/west.yml
-
-    # zmk-nice-oled: WPM, layer, modifier, bongo cat widgets
-    # works with nice!view and SSD1306 OLED on ZMK v0.3
-    - name: zmk-nice-oled
-      remote: mctechnology17
-      revision: main
-
   self:
     path: config
