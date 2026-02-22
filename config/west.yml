@@ -1,22 +1,17 @@
-# config/west.yml
 manifest:
   remotes:
+    # zmk official
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: gpeye
-      url-base: https://github.com/GPeye
-
+    - name: gpeye #new entry
+      url-base: https://github.com/GPeye #new entry
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3.0
-      import: app/west.yml
-
-    # nice-view-mod: official nice!view shield as a customizable module
-    # gives us logo + layer + BT + battery without WPM dependency
-    - name: nice-view-mod
-      remote: gpeye
       revision: main
-
+      import: app/west.yml
+    - name: nice-view-mod #new entry
+      remote: gpeye #new entry
+      revision: main #new entry
   self:
     path: config
